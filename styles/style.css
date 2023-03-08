@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.grid{
+    display: grid;
+}
+.container{
+    background: palegreen;
+    width: 400px
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+
+section{
+    height: 100vh;
+    width: 100vw;
+}
+
+/* display area */
+.display-container{
+    padding: 3rem;
+}
+.display{
+    background-color: #fff;
+}
+
+/* buttons area */
+.keys{
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5 , 60px);
+}
