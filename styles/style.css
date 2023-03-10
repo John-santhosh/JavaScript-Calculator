@@ -19,7 +19,6 @@
     align-items: center;
 }
 
-
 section{
     height: 100vh;
     width: 100vw;
@@ -29,7 +28,8 @@ section{
 .display-container{
     padding: 3rem;
 }
-.display{
+.display,.result{
+    margin: 10px 0;
     background-color: #fff;
 }
 
