@@ -68,32 +68,57 @@ window.addEventListener('keydown',e=>{
         
     });
 })
-clear.addEventListener('click',()=>display.textContent="")
-
-// console.log(operator)
+// clearing the last entered number
+window.addEventListener('keydown',e=>{
+    if (e.key == "Backspace") clearLastNumber()
+    else if(e.key == "Escape") acEvent ();
+})
+clear.addEventListener('click',clearLastNumber)
+function clearLastNumber(){
+    if(display.textContent){
+        let lastPiece = display.textContent.length - 1;
+        let a = ["/", "*", "-", "+", "%"];
+        if (!a.includes(display.textContent.at(-1))) {
+          display.textContent = display.textContent.slice(0, lastPiece);
+          if (number2) number2 = number2.slice(0, number2.length - 1);
+          else if (number1) number1 = number1.slice(0, number1.length - 1);
+        }else return 
+    }
+}
+// setting operator 
 operator.forEach(each=>{
     each.addEventListener("click", (e) => {
-        number1 = number2;
-        number2= "";
-        display.textContent += e.target.textContent
-        operator1 = e.target.getAttribute("id");
+        if(!operator1){
+            number1 = number2;
+            number2 = "";
+            display.textContent += e.target.textContent;
+            operator1 = e.target.getAttribute("id");
+        }else return
     });
 })
 
-// 
-equalTo.addEventListener('click',()=>{
-    console.log(number1,number2,operator1)
+// equal-to key and enter key 
+window.addEventListener("keydown",e=>{
+    if (e.key == "=" || e.key == "Enter") equals();
+})
+equalTo.addEventListener('click',equals)
+function equals(){
+    if(number1 || number2) {
     displayResult = operate(Number(number1),Number(number2),window[operator1]); 
     result.textContent = displayResult;
         display.textContent = "";
         number1 = "";
         number2 = "";
-})
-
-ac.addEventListener('click',()=>{
+        number2 = displayResult;
+        // operator1= ""
+    }else return
+}
+// clear all
+ac.addEventListener('click',acEvent)
+function acEvent(){
     number1= "";
     number2="";
     operator1 = "";
     result.textContent=0;
     display.textContent="";
-})
+}

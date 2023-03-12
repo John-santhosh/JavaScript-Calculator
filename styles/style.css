@@ -10,13 +10,19 @@
 .grid{
     display: grid;
 }
+body{
+        background: url(../images/bg-5.jpg)center/cover no-repeat;
+        min-height: 550px;
+}
 .container{
-    /* background: rgb(41, 36, 63); */
-    border: 2px solid orange;
-    min-width: 375px;
-    /* height: 400px; */
+    background:rgba(255, 0, 128, 0.268);
+    border: 2px solid rgba(255, 166, 0, 0.373);
+    width: 350px;
+    /* max-width: 400px; */
     border-radius: 1rem;
     overflow: hidden;
+    box-shadow: rgba(47, 255, 0, 0.308) 0px 50px 100px -20px, rgba(242, 250, 0, 0.518) 0px 30px 60px -30px, rgba(207, 255, 15, 0.426) 0px -2px 6px 0px inset;
+
 }
 .flex-center{
     justify-content: center;
@@ -31,9 +37,11 @@ section{
 /* display area */
 .display-container{
     padding: 3rem;
+    color: #ffffff;
 }
 .display,.result{
-    /* background-color: #8f8f8f51; */
+    overflow: hidden;;
+    width: 100%;
     text-align: right;
 }
 .display{
@@ -45,22 +53,23 @@ section{
 /* buttons area */
 .keys{
     border-top: 1px solid rgba(255, 166, 0, 0.429);
-    grid-template-columns: repeat(4,60px);
-    grid-template-rows: repeat(5 , 60px);
+    grid-template-columns: repeat(4,55px);
+    grid-template-rows: repeat(5 , 55px);
     gap: 1rem;
     justify-content: center;
     padding: 1rem;
 }
 button{
-    font-size: 1.5rem;
+    font-size: 25px;
     border-radius: 50%;
     background-color: transparent;
     border: transparent;
-    color: #000000;
+    background: rgba(255, 252, 245, 0.326);
+    color: #ffffff;
     transition: background-color .3s , transform .1s;
 }
 .key:hover{
-    background: rgba(255, 166, 0, 0.264);
+    background: rgba(255, 166, 0, 0.469);
 }
 .key:active{
     transform: scale(1.1);
@@ -74,10 +83,16 @@ button{
     transition: background-color .3s;
 }
 #equal:active{
-    border-color:  rgba(255, 166, 0, 0.743);
+    border-color:  rgba(255, 166, 0, 0.906);
     background-color: transparent;
 }
 .keys :is(.operator,#ac,#c){
-    color: orange;
+    color: rgb(255, 166, 0);
+    background: rgba(18, 18, 18, 0.381);
+    font-weight: 700;
 }
 
+:is(.operator,#ac,#c):is(:active){
+    color: #8a8a8a;
+    background: rgba(229, 255, 0, 0.809);
+}
