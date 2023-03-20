@@ -11,20 +11,42 @@
   display: grid;
 }
 body {
-  background: url(../images/bg-4.jpg) center/cover no-repeat;
+  /* background: url(../images/bg-4.jpg) center/cover no-repeat; */
+  background: rgb(170, 75, 107);
+  background: linear-gradient(
+    97deg,
+    rgba(170, 75, 107, 1) 0%,
+    rgba(107, 107, 131, 1) 35%,
+    rgba(59, 140, 153, 0.817) 100%
+  );
+  background-size: 400%;
   min-height: 550px;
+  transition: all 0.5s;
+  animation: bg-mov 3s infinite;
+}
+
+@keyframes bg-mov {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 .container {
-  background: rgba(255, 0, 128, 0.268);
   border: 2px solid rgba(255, 166, 0, 0.373);
   width: 350px;
-  /* max-width: 400px; */
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: rgba(47, 255, 0, 0.308) 0px 50px 100px -20px,
-    rgba(242, 250, 0, 0.518) 0px 30px 60px -30px,
-    rgba(207, 255, 15, 0.426) 0px -2px 6px 0px inset;
-  background-color: #444444;
+  background: rgb(20, 30, 48);
+  background: linear-gradient(
+    97deg,
+    rgba(20, 30, 48, 1) 0%,
+    rgb(31, 50, 72) 78%
+  );
 }
 .flex-center {
   justify-content: center;
@@ -50,9 +72,7 @@ section {
 .display {
   min-height: 2rem;
 }
-.display-container {
-  /* background:rgb(22, 27, 37); */
-}
+
 /* buttons area */
 .keys {
   border-top: 1px solid rgba(255, 166, 0, 0.429);
@@ -70,6 +90,7 @@ button {
   background: rgba(255, 252, 245, 0.326);
   color: #ffffff;
   transition: background-color 0.3s, transform 0.1s;
+  cursor: pointer;
 }
 .key:hover {
   background: rgba(255, 166, 0, 0.469);
@@ -98,4 +119,22 @@ button {
 :is(.operator, #ac, #c):is(:active) {
   color: #8a8a8a;
   background: rgba(229, 255, 0, 0.809);
+}
+
+:where(img) {
+  width: 60%;
+}
+
+#ac,
+#c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
 }

@@ -14,9 +14,14 @@
       type="image/x-icon"
     />
     <title>calculator</title>
+    <!-- animate.css CDN -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    /> -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body>
+  <body class="">
     <section class="row flex-center">
       <div class="container">
         <div class="display-container">
@@ -25,8 +30,12 @@
           <h2 class="display"></h2>
         </div>
         <div class="keys grid">
-          <button class="key" id="ac" type="button" value="AC">AC</button>
-          <button class="key" id="c" type="button" value="C">C</button>
+          <button class="key" id="ac" type="button" value="AC">
+            <img src="images/clear.png" alt="" />
+          </button>
+          <button class="key" id="c" type="button" value="C">
+            <img src="images/delete.png" alt="" />
+          </button>
           <button
             class="key operator"
             data-id="mod"
@@ -85,7 +94,12 @@
         </div>
       </div>
     </section>
-
+    <footer>
+      <p>
+        Created by <a href="#">John Santhosh</a> &copy;
+        <span class="year"></span>
+      </p>
+    </footer>
     <script src="script/main.js"></script>
   </body>
 </html>
