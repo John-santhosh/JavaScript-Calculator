@@ -1,47 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple calculator using javaScript which allows you to perform arithmetic operations">
-    <link rel="shortcut icon" href="images/icons8-cost-saving-32.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple calculator using javaScript which allows you to perform arithmetic operations"
+    />
+    <link
+      rel="shortcut icon"
+      href="images/icons8-cost-saving-32.png"
+      type="image/x-icon"
+    />
     <title>calculator</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
     <section class="row flex-center">
-        <div class="container ">           
-            <div class="display-container">
-                <!-- <p class="display">30</p> -->
-                <h2 class="result">0</h2>
-                <h2 class="display"></h2>
-            </div>
-            <div class="keys grid">
-                    <button class="key" id="ac" type="button" value="AC">AC</button>
-                    <button class="key" id="c" type="button" value="C">C</button>
-                    <button class="key operator" id="mod" type="button" value="mod">%</button>
-                    <button class="key operator" id="div" type="button" value="/">/</button>
-                    <button class="key input" type="button" value="7">7</button>
-                    <button class="key input" type="button" value="8">8</button>
-                    <button class="key input" type="button" value="9">9</button>
-                    <button class="key operator" id="add" type="button" value="+">+</button>
-                    <button class="key input" type="button" value="4">4</button>
-                    <button class="key input" type="button" value="5">5</button>
-                    <button class="key input" type="button" value="6">6</button>
-                    <button class="key operator" id="sub" type="button" value="-">-</button>
-                    <button class="key input" type="button" value="1">1</button>
-                    <button class="key input" type="button" value="2">2</button>
-                    <button class="key input" type="button" value="3">3</button>
-                    <button class="key operator" id="mul" type="button" value="*">*</button>
-                    <button class="key input" type="button" value="0">0</button>
-                    <button class="key input" id="period" type="button" value=".">.</button>
-                    <button id="equal" type="button" value="">=</button>
-                    <!-- <button class="key" type="button" value=""></button> -->
-            </div>
+      <div class="container">
+        <div class="display-container">
+          <!-- <p class="display">30</p> -->
+          <h2 class="result">&nbsp;</h2>
+          <h2 class="display"></h2>
         </div>
+        <div class="keys grid">
+          <button class="key" id="ac" type="button" value="AC">AC</button>
+          <button class="key" id="c" type="button" value="C">C</button>
+          <button
+            class="key operator"
+            data-id="mod"
+            type="button"
+            data-value="%"
+          >
+            %
+          </button>
+          <button
+            class="key operator"
+            data-id="div"
+            type="button"
+            data-value="/"
+          >
+            /
+          </button>
+          <button class="key input" type="button" value="7">7</button>
+          <button class="key input" type="button" value="8">8</button>
+          <button class="key input" type="button" value="9">9</button>
+          <button
+            class="key operator"
+            data-id="add"
+            type="button"
+            data-value="+"
+          >
+            +
+          </button>
+          <button class="key input" type="button" value="4">4</button>
+          <button class="key input" type="button" value="5">5</button>
+          <button class="key input" type="button" value="6">6</button>
+          <button
+            class="key operator"
+            data-id="sub"
+            type="button"
+            data-value="-"
+          >
+            -
+          </button>
+          <button class="key input" type="button" value="1">1</button>
+          <button class="key input" type="button" value="2">2</button>
+          <button class="key input" type="button" value="3">3</button>
+          <button
+            class="key operator"
+            data-id="mul"
+            type="button"
+            data-value="*"
+          >
+            *
+          </button>
+          <button class="key input" type="button" value="0">0</button>
+          <button class="key input" id="period" type="button" value=".">
+            .
+          </button>
+          <button id="equal" type="button" value="">=</button>
+          <!-- <button class="key" type="button" value=""></button> -->
+        </div>
+      </div>
     </section>
 
-    <script  src="script/main.js"></script>
-</body>
+    <script src="script/main.js"></script>
+  </body>
 </html>
