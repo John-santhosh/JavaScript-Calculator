@@ -33,6 +33,8 @@ let displayResult = "";
 let NumberInput = document.querySelectorAll(".input");
 let display = document.querySelector(".display");
 
+// SETTING EVENTS HANDLERS👇
+
 NumberInput.forEach((each) => {
   each.addEventListener("click", (e) => {
     currentNumber = e.target.value;
@@ -53,16 +55,21 @@ operator.forEach((each) => {
 // equal-to key and enter key
 equalTo.addEventListener("click", equals);
 
-window.addEventListener("keydown", (e) => {
-  if (e.key == "=" || e.key == "Enter") equals();
-  let a = ["/", "*", "-", "+", "%"];
-  if (a.includes(e.key)) operate();
-});
-
 // clear all
 ac.addEventListener("click", acEvent);
 
+// listening for keyboard events
 window.addEventListener("keydown", (e) => {
+  // equalTo key and enter key
+  if (e.key == "=" || e.key == "Enter") equals();
+  // let a = ["/", "*", "-", "+", "%"];
+  // if (a.includes(e.key)) operate();
+
+  // backspace and escape events
+  if (e.key == "Backspace") clearLastNumber();
+  if (e.key == "Escape") acEvent();
+
+  // listening for number keys
   keys.forEach((each) => {
     let eKey = e.key;
     if (each.textContent == eKey) {
@@ -78,13 +85,9 @@ window.addEventListener("keydown", (e) => {
     }
   });
 });
+
 // clearing the last entered number
 clear.addEventListener("click", clearLastNumber);
-
-window.addEventListener("keydown", (e) => {
-  if (e.key == "Backspace") clearLastNumber();
-  else if (e.key == "Escape") acEvent();
-});
 
 // setting year in footer
 window.addEventListener("DOMContentLoaded", () => {
@@ -98,8 +101,10 @@ function operate() {
   // for chaining. if operator already in the equation then performing equals() function
   let a = ["/", "*", "-", "+", "%"];
   for (let each of a) {
+    // console.log(display.textContent.includes(each));
     if (display.textContent.includes(each)) equals();
   }
+
   // assigning number1
   if (!number1) number1 = display.textContent;
 
@@ -107,11 +112,20 @@ function operate() {
   if (!number1) return;
   // clearing previous operator and saving new operator
   operator1 = "";
+
+  // changing the operator in display when the user change it
+  if (a.includes(display.textContent.at(-1))) {
+    console.log(true);
+    display.textContent = display.textContent.slice(
+      0,
+      display.textContent.length - 1
+    );
+  }
   display.textContent += this.dataset.value;
   operator1 = this.dataset.id;
 }
 function equals() {
-  if (number1 || number2) {
+  if (number1 && number2) {
     displayResult = calc(Number(number1), Number(number2), window[operator1]);
     result.textContent = displayResult;
     display.textContent = "";
